@@ -1,0 +1,17 @@
+{
+  "name": "52poke-evolution",
+  "version": "0.5.0",
+  "private": true,
+  "description": "Build tooling for 52Poké Evolution theme assets.",
+  "scripts": {
+    "build:css": "postcss style.css --config postcss.config.js --output style.min.css",
+    "build:js": "terser js/functions.js --compress --mangle --output js/functions.min.js",
+    "build": "npm run build:css && npm run build:js"
+  },
+  "devDependencies": {
+    "cssnano": "^7.0.6",
+    "postcss": "^8.4.41",
+    "postcss-cli": "^11.0.0",
+    "terser": "^5.31.3"
+  }
+}
