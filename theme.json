@@ -1,0 +1,73 @@
+{
+  "$schema": "https://schemas.wp.org/wp/6.6/theme.json",
+  "version": 3,
+  "settings": {
+    "color": {
+      "defaultPalette": false,
+      "palette": [
+        { "slug": "blue", "name": "蓝色", "color": "#4065b4" },
+        { "slug": "link-blue", "name": "链接蓝", "color": "#0b6da0" },
+        { "slug": "bright-blue", "name": "亮蓝色", "color": "#21a9f0" },
+        { "slug": "red", "name": "红色", "color": "#c2181c" },
+        { "slug": "charcoal", "name": "正文", "color": "#555555" },
+        { "slug": "muted", "name": "次要文字", "color": "#767676" },
+        { "slug": "light-gray", "name": "边框", "color": "#e6e6e6" },
+        { "slug": "off-white", "name": "浅灰色", "color": "#f6f6f6" },
+        { "slug": "white", "name": "白色", "color": "#ffffff" }
+      ]
+    },
+    "layout": {
+      "contentSize": "702px",
+      "wideSize": "702px"
+    },
+    "spacing": {
+      "blockGap": true,
+      "margin": true,
+      "padding": true,
+      "defaultSpacingSizes": false,
+      "spacingSizes": [
+        { "slug": "10", "name": "极小", "size": "5px" },
+        { "slug": "20", "name": "小", "size": "10px" },
+        { "slug": "30", "name": "中", "size": "15px" },
+        { "slug": "40", "name": "大", "size": "20px" },
+        { "slug": "50", "name": "较大", "size": "30px" },
+        { "slug": "60", "name": "特大", "size": "40px" }
+      ],
+      "units": [ "px", "em", "rem", "%", "vw", "vh" ]
+    },
+    "typography": {
+      "defaultFontSizes": false,
+      "lineHeight": true,
+      "fontFamilies": [
+        {
+          "slug": "system",
+          "name": "系统字体",
+          "fontFamily": "-apple-system, \"Helvetica Neue\", \"Luxi Sans\", \"DejaVu Sans\", \"Hiragino Sans GB\", \"Microsoft YaHei\", \"Microsoft JhengHei\", AppleGothic, \"WenQuanYi Micro Hei\", STHeiti, Meiryo, Arial, sans-serif"
+        }
+      ],
+      "fontSizes": [
+        { "slug": "small", "name": "小", "size": "12px" },
+        { "slug": "normal", "name": "标准", "size": "14px" },
+        { "slug": "medium", "name": "中", "size": "16px" },
+        { "slug": "large", "name": "大", "size": "18px" },
+        { "slug": "x-large", "name": "特大", "size": "24px" }
+      ]
+    }
+  },
+  "styles": {
+    "blocks": {
+      "core/button": {
+        "color": { "background": "var:preset|color|blue", "text": "var:preset|color|white" },
+        "border": { "radius": "3px" },
+        "spacing": { "padding": { "top": "10px", "right": "15px", "bottom": "10px", "left": "15px" } },
+        "typography": { "fontSize": "inherit", "lineHeight": "1.5" },
+        "variations": {
+          "outline": {
+            "color": { "background": "transparent", "text": "var:preset|color|blue" },
+            "border": { "color": "var:preset|color|blue" }
+          }
+        }
+      }
+    }
+  }
+}

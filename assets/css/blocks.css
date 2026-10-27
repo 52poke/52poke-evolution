@@ -1,0 +1,144 @@
+.entry-content > .alignwide,
+.entry-content > .alignfull {
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.entry-content > :where([class*="wp-block-"]) {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.wp-block-heading:where(h1, h2) {
+    font-size: 16px;
+}
+
+.wp-block-heading:where(h3) {
+    font-size: 15px;
+}
+
+.wp-block-heading:where(h4) {
+    font-size: 14px;
+}
+
+.wp-block-heading:where(h5) {
+    font-size: 13px;
+}
+
+.wp-block-heading:where(h6) {
+    font-size: 12px;
+}
+
+:where(.wp-block-cover, .has-text-color) a:where(:not(.wp-element-button, .wp-block-button__link)) {
+    color: inherit;
+}
+
+.wp-block-image img,
+.wp-block-gallery img,
+.wp-block-video video,
+.wp-block-audio audio,
+.wp-block-embed iframe {
+    max-width: 100%;
+}
+
+.wp-block-image img,
+.wp-block-video video {
+    height: auto;
+}
+
+.wp-block-audio audio {
+    min-width: 0;
+}
+
+.wp-block-image :where(.alignleft) {
+    margin: 0 15px 15px 0;
+}
+
+.wp-block-image :where(.alignright) {
+    margin: 0 0 15px 15px;
+}
+
+.wp-block-image figcaption,
+.wp-block-gallery figcaption,
+.wp-block-video figcaption,
+.wp-block-audio figcaption,
+.wp-block-embed figcaption,
+.wp-block-table figcaption {
+    font-size: 12px;
+    color: #767676;
+    text-align: center;
+}
+
+.wp-block-columns > .wp-block-column,
+.wp-block-media-text > .wp-block-media-text__content {
+    min-width: 0;
+    overflow-wrap: break-word;
+}
+
+.wp-block-table {
+    overflow-x: auto;
+}
+
+.wp-block-table :where(table) {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+.wp-block-table :where(th, td) {
+    padding: 6px 12px;
+    border-color: #e6e6e6;
+}
+
+.wp-block-code,
+.wp-block-preformatted {
+    max-width: 100%;
+    overflow-x: auto;
+    font-family: monospace;
+}
+
+.wp-block-code {
+    padding: 10px;
+    border: 1px solid #e6e6e6;
+    border-radius: 3px;
+    background: #f6f6f6;
+}
+
+.wp-block-code code {
+    font-family: inherit;
+    font-size: inherit;
+}
+
+.wp-block-quote {
+    border-color: var(--wp--preset--color--blue);
+    line-height: 1.5;
+}
+
+.wp-block-pullquote {
+    padding: 20px 0;
+    font-size: 20px;
+    line-height: 1.5;
+}
+
+.wp-block-pullquote blockquote {
+    margin: 0;
+    color: inherit;
+    line-height: inherit;
+}
+
+.wp-block-quote cite,
+.wp-block-pullquote cite {
+    font-size: 12px;
+    font-style: normal;
+}
+
+.wp-block-separator {
+    color: #e6e6e6;
+}
+
+@media (max-width: 767px) {
+    .wp-block-image :where(.alignleft, .alignright) {
+        float: none;
+        margin: 10px auto;
+    }
+}

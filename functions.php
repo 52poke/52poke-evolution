@@ -9,6 +9,11 @@ function evolution_setup() {
     add_theme_support( 'automatic-feed-links' );
     add_theme_support( 'title-tag' );
     add_theme_support( 'post-thumbnails' );
+    add_theme_support( 'wp-block-styles' );
+    add_theme_support( 'responsive-embeds' );
+    add_theme_support( 'align-wide' );
+    add_theme_support( 'editor-styles' );
+    add_editor_style( array( 'assets/css/blocks.css', 'assets/css/editor.css' ) );
 
     register_nav_menus( array(
         'primary'   => '头部菜单栏',
@@ -34,16 +39,44 @@ function evolution_widgets_init() {
 }
 add_action( 'widgets_init', 'evolution_widgets_init' );
 
+function evolution_links_widget_args( $args ) {
+    $args['show_rating'] = false;
+    return $args;
+}
+add_filter( 'widget_links_args', 'evolution_links_widget_args' );
+
+function evolution_widget_styles() {
+    $dependencies = array( 'wp-block-library' );
+    if ( ! is_admin() ) {
+        $dependencies[] = 'evolution-blocks';
+    }
+
+    wp_enqueue_style(
+        'evolution-widgets',
+        get_theme_file_uri( '/assets/css/widgets.css' ),
+        $dependencies,
+        filemtime( get_theme_file_path( '/assets/css/widgets.css' ) )
+    );
+}
+add_action( 'enqueue_block_assets', 'evolution_widget_styles' );
+add_action( 'customize_controls_enqueue_scripts', 'evolution_widget_styles' );
+
 function evolution_scripts() {
     // Main stylesheet
     $style_min_path = get_stylesheet_directory() . '/style.min.css';
     $style_uri = get_stylesheet_uri();
-    $style_version = '20140815';
+    $style_version = filemtime( get_stylesheet_directory() . '/style.css' );
     if ( file_exists( $style_min_path ) ) {
         $style_uri = get_stylesheet_directory_uri() . '/style.min.css';
         $style_version = filemtime( $style_min_path );
     }
     wp_enqueue_style( 'evolution-style', $style_uri, array(), $style_version );
+    wp_enqueue_style(
+        'evolution-blocks',
+        get_theme_file_uri( '/assets/css/blocks.css' ),
+        array( 'evolution-style', 'wp-block-library' ),
+        filemtime( get_theme_file_path( '/assets/css/blocks.css' ) )
+    );
 
     // Masonry + imagesLoaded (core handles)
     wp_enqueue_script( 'masonry' );

@@ -4,7 +4,7 @@ Theme URI: http://52poke.com
 Author: hikarievo
 Author URI: http://wiki.52poke.com/wiki/User:%E9%98%BF%E5%B8%83
 Description: Designed by hikarievo, the all new theme for 52Poké, inspired by Pokémon X·Y.
-Version: 0.5
+Version: 0.6
 License: GPL-2.0-or-later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
 Tags: pokemon, 52poke, red, blue, two columns
@@ -1437,19 +1437,19 @@ article.post:before, article.page:before, article.post:after, article.page:after
 article.post:after, article.page:after {
     clear: both
 }
-article.post a, article.page a {
+:where(article.post a, article.page a) {
     color: #0b6da0
 }
-article.post a:hover, article.page a:hover {
+:where(article.post a:hover, article.page a:hover) {
     color: #21a9f0;
     text-decoration: none
 }
-article.post blockquote, article.page blockquote {
+:where(article.post, article.page) blockquote {
     margin: 1em;
     line-height: 1.3;
     color: #767676
 }
-article.post ul, article.page ul {
+:where(article.post, article.page) ul {
     padding-left: 20px
 }
 article.post h1.entry-title, article.page h1.entry-title {
@@ -1475,7 +1475,7 @@ article.post img.alignright, article.page img.alignright {
 article.post .entry-content, article.page .entry-content, article.post .entry-summary, article.page .entry-summary {
     line-height: 1.5
 }
-article.post .entry-content h1, article.page .entry-content h1, article.post .entry-summary h1, article.page .entry-summary h1, article.post .entry-content h2, article.page .entry-content h2, article.post .entry-summary h2, article.page .entry-summary h2, article.post .entry-content h3, article.page .entry-content h3, article.post .entry-summary h3, article.page .entry-summary h3, article.post .entry-content h4, article.page .entry-content h4, article.post .entry-summary h4, article.page .entry-summary h4, article.post .entry-content h5, article.page .entry-content h5, article.post .entry-summary h5, article.page .entry-summary h5, article.post .entry-content h6, article.page .entry-content h6, article.post .entry-summary h6, article.page .entry-summary h6 {
+:where(article.post, article.page) :where(.entry-content, .entry-summary) :is(h1, h2, h3, h4, h5, h6) {
     padding: 0;
     margin: 1em 0;
     clear: both;
@@ -1545,21 +1545,21 @@ article.post .entry-meta span:last-of-type, article.page .entry-meta span:last-o
     -moz-box-sizing: border-box;
     box-sizing: border-box
 }
-.site-main .widget-area a {
+:where(.site-main .widget-area a) {
     color: #0b6da0;
     text-decoration: none
 }
-.site-main .widget-area a:hover {
+:where(.site-main .widget-area a:hover) {
     color: #21a9f0;
     text-decoration: underline
 }
 .site-main .widget-area input {
     max-width: 100%
 }
-.site-main .widget-area ul {
+:where(.site-main .widget-area) ul {
     padding: 0;
     margin: 0;
-    color: #333
+    color: inherit
 }
 .site-main .widget-area li {
     list-style: none
@@ -1644,19 +1644,19 @@ article.post .entry-meta span:last-of-type, article.page .entry-meta span:last-o
 .single-content article.post h1.entry-title, article.page h1.entry-title, article.no-results h1.entry-title {
     font-size: 18px
 }
-.single-content article.post .entry-content h1, article.page .entry-content h1, article.no-results .entry-content h1, .single-content article.post .entry-summary h1, article.page .entry-summary h1, article.no-results .entry-summary h1, .single-content article.post .entry-content h2, article.page .entry-content h2, article.no-results .entry-content h2, .single-content article.post .entry-summary h2, article.page .entry-summary h2, article.no-results .entry-summary h2 {
+:where(.single-content article.post, article.page, article.no-results) :where(.entry-content, .entry-summary) :is(h1, h2) {
     font-size: 16px
 }
-.single-content article.post .entry-content h3, article.page .entry-content h3, article.no-results .entry-content h3, .single-content article.post .entry-summary h3, article.page .entry-summary h3, article.no-results .entry-summary h3 {
+:where(.single-content article.post, article.page, article.no-results) :where(.entry-content, .entry-summary) h3 {
     font-size: 15px
 }
-.single-content article.post .entry-content h4, article.page .entry-content h4, article.no-results .entry-content h4, .single-content article.post .entry-summary h4, article.page .entry-summary h4, article.no-results .entry-summary h4 {
+:where(.single-content article.post, article.page, article.no-results) :where(.entry-content, .entry-summary) h4 {
     font-size: 14px
 }
-.single-content article.post .entry-content h5, article.page .entry-content h5, article.no-results .entry-content h5, .single-content article.post .entry-summary h5, article.page .entry-summary h5, article.no-results .entry-summary h5 {
+:where(.single-content article.post, article.page, article.no-results) :where(.entry-content, .entry-summary) h5 {
     font-size: 13px
 }
-.single-content article.post .entry-content h6, article.page .entry-content h6, article.no-results .entry-content h6, .single-content article.post .entry-summary h6, article.page .entry-summary h6, article.no-results .entry-summary h6 {
+:where(.single-content article.post, article.page, article.no-results) :where(.entry-content, .entry-summary) h6 {
     font-size: 12px
 }
 @media (min-width:980px) {
